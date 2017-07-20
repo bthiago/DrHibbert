@@ -1,7 +1,7 @@
 # DrHibbert
 ![drimage](https://raw.githubusercontent.com/bthiago/DrHibbert/master/logo.png)
 
-#Enviroment Variables
+# Enviroment Variables
 
 * AWS_ACCESS_KEY_ID
 * AWS_SECRET_ACCESS_KEY
@@ -9,8 +9,10 @@
 * AWS_TOPICALARM
 * AWS_TAG_MONITOR_GROUP_KEY
 * AWS_TAG_MONITOR_COMPONENT_KEY
+* AWS_PREFIX_ALARM
 * CACHETCLIENT_TOKEN
 * CACHETCLIENT_URL
 * NEWRELICCLIENT_TOKEN
 * NEWRELICCLIENT_URL
 * NEWRELICCLIENT_CHANNEL_ID
+

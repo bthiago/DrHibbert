@@ -4,10 +4,11 @@ import boto3
 
 class AWSClient():
 
-    def __init__(self, topic=None, tag_monitor_group_key=None, tag_monitor_component_key=None):
+    def __init__(self, topic=None, tag_monitor_group_key=None, tag_monitor_component_key=None, prefix_alarm=None):
         self.topic_alarm = os.getenv('AWS_TOPICALARM',topic)
         self.tag_monitor_group_key = os.getenv('AWS_TAG_MONITOR_GROUP_KEY',tag_monitor_group_key)
         self.tag_monitor_component_key = os.getenv('AWS_TAG_MONITOR_COMPONENT_KEY',tag_monitor_component_key)
+        self.prefix_alarm = os.getenv('AWS_PREFIX_ALARM',prefix_alarm)
 
     def ec2_find_instance_by_id(self,instance_id):
         ec2 = boto3.resource('ec2')
@@ -121,7 +122,7 @@ class AWSClient():
         cloudwatch = boto3.client('cloudwatch')
 
         for resource_id in resources_id:
-            alarm_name = '_QuintoAndar_Monitor_EC2_%s_%s' % (metric_name, resource_id)
+            alarm_name = '%s_Monitor_EC2_%s_%s' % (self.prefix_alarm, metric_name, resource_id)
 
             cloudwatch.put_metric_alarm(
                 AlarmName=alarm_name,
@@ -158,7 +159,7 @@ class AWSClient():
         cloudwatch = boto3.client('cloudwatch')
 
         for resource_id in resources_id:
-            alarm_name = '_QuintoAndar_Monitor_RDS_%s_%s' % (metric_name, resource_id)
+            alarm_name = '%s_Monitor_RDS_%s_%s' % (self.prefix_alarm, metric_name, resource_id)
 
             cloudwatch.put_metric_alarm(
                 AlarmName=alarm_name,
