@@ -4,11 +4,11 @@ import boto3
 
 class AWSClient():
 
-    def __init__(self, topic=None, tag_monitor_group_key=None, tag_monitor_component_key=None, prefix_alarm=None):
-        self.topic_alarm = os.getenv('AWS_TOPICALARM',topic)
-        self.tag_monitor_group_key = os.getenv('AWS_TAG_MONITOR_GROUP_KEY',tag_monitor_group_key)
-        self.tag_monitor_component_key = os.getenv('AWS_TAG_MONITOR_COMPONENT_KEY',tag_monitor_component_key)
-        self.prefix_alarm = os.getenv('AWS_PREFIX_ALARM',prefix_alarm)
+    def __init__(self, topic=None, tag_monitor_group_key=None, tag_monitor_component_key=None, prefix_alarm="_DrHibbert"):
+        self.topic_alarm = os.getenv('DRHIBBERT_AWS_TOPICALARM',topic)
+        self.tag_monitor_group_key = os.getenv('DRHIBBERT_AWS_TAG_MONITOR_GROUP_KEY',tag_monitor_group_key)
+        self.tag_monitor_component_key = os.getenv('DRHIBBERT_AWS_TAG_MONITOR_COMPONENT_KEY',tag_monitor_component_key)
+        self.prefix_alarm = os.getenv('DRHIBBERT_AWS_PREFIX_ALARM',prefix_alarm)
 
     def ec2_find_instance_by_id(self,instance_id):
         ec2 = boto3.resource('ec2')

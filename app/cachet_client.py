@@ -30,8 +30,8 @@ import json
 class CachetClient():
 
     def __init__(self, token=None,server_url=None):
-        self.token = os.getenv('CACHETCLIENT_TOKEN',token)
-        self.server_url = os.getenv('CACHETCLIENT_URL',server_url)
+        self.token = os.getenv('DRHIBBERT_CACHETCLIENT_TOKEN',token)
+        self.server_url = os.getenv('DRHIBBERT_CACHETCLIENT_URL',server_url)
 
     def request_headers(self):
         headers = {'user-agent': 'cachet-client/0.0.1','Content-type':'application/json','X-Cachet-Token':self.token}

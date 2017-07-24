@@ -8,9 +8,9 @@ import json
 class NewRelicClient():
 
     def __init__(self,server_url=None, token=None, channel_id=None):
-        self.token = os.getenv('NEWRELICCLIENT_TOKEN',token)
-        self.server_url = os.getenv('NEWRELICCLIENT_URL',server_url)
-        self.channel_id = os.getenv('NEWRELICCLIENT_CHANNEL_ID',channel_id)
+        self.token = os.getenv('DRHIBBERT_NEWRELICCLIENT_TOKEN',token)
+        self.server_url = os.getenv('DRHIBBERT_NEWRELICCLIENT_URL',server_url)
+        self.channel_id = os.getenv('DRHIBBERT_NEWRELICCLIENT_CHANNEL_ID',channel_id)
 
     def request_headers_get(self):
         headers = {'user-agent': 'newrelic-client/0.0.1','X-Api-Key':self.token}
