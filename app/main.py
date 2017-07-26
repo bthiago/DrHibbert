@@ -55,7 +55,7 @@ def fix_incident():
     return json.dumps(ret)
 
 
-@app.route("/alarms/newrelic",methods=['POST'])
+@app.route("/alarms/receive/newrelic",methods=['POST'])
 def newrelic_alarm():
     j = request.get_json(force=True)
     print j
@@ -85,7 +85,7 @@ def newrelic_alarm():
 
     return str(j)
 
-@app.route("/alarms/aws",methods=['POST'])
+@app.route("/alarms/receive/aws",methods=['POST'])
 def aws_alarm():
     j = request.get_json(force=True)
     print j
