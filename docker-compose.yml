@@ -2,7 +2,7 @@ version: "3"
 
 services:
   cachet-baltha:
-    image: cachet-baltha/docker
+    image: cachet-baltha/docker:v0.1
     environment:
       - CACHETHQ_DEBUG=${CACHETHQ_DEBUG}
       - CACHETHQ_APP_URL=${CACHETHQ_APP_URL}
