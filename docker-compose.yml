@@ -21,7 +21,7 @@ services:
       - 8000:8000
     restart: always
   drhibbert:
-    image: drhibbert
+    image: drhibbert:v0.1
     ports:
       - 9000:80
     links:
