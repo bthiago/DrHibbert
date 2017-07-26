@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import boto3
+import os
 
 class AWSClient():
 
