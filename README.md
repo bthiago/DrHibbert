@@ -2,10 +2,23 @@
 ![drimage](https://raw.githubusercontent.com/bthiago/DrHibbert/master/logo.png)
 
 # Installation
+(TODO)
 
 # Tutorial
+(TODO)
 
 # Configuration 
+
+
+## Google Authentication
+
+### Environment Variables
+
+* CACHETHQ_GOOGLE_CLIENT_ID
+* CACHETHQ_GOOGLE_CLIENT_SECRET
+* CACHETHQ_GOOGLE_REDIRECT_URL
+* CACHETHQ_GOOGLE_ENABLED_DOMAIN
+
 
 ## CachetHQ Status Page
 
@@ -15,7 +28,7 @@
 
 ## Receiving alarms from AWS CloudWatch
 
-### Enviroment Variables
+### Environment Variables
 
 #### AWS Client (Boto3)
 * AWS_ACCESS_KEY_ID
@@ -37,7 +50,7 @@ We'll use these variables to setup components in CachetHQ:
 
 ## Creating alarms into AWS CloudWatch 
 
-### Enviroment Variables
+### Environment Variables
 
 #### Dr Hibbert AWS Integration 
 * DRHIBBERT_AWS_TOPICALARM : SNS Topic ARN that you need to create previously. This topic should be configured to trigger  Dr. Hibbert AWS Endpoint (Section Receiving alarms from AWS CloudWatch)
@@ -51,7 +64,7 @@ We'll use these variables to setup components in CachetHQ:
 
 ## Creating alarms into New Relic 
 
-### Enviroment Variables
+### Environment Variables
 
 #### Dr Hibbert NewRelic Integration 
 * DRHIBBERT_NEWRELICCLIENT_TOKEN
