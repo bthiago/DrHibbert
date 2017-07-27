@@ -54,6 +54,34 @@ def fix_incident():
 
     return json.dumps(ret)
 
+@app.route("/components/new",methods=['POST'])
+def new_component():
+    j = request.get_json(force=True)
+    print j
+
+    component_name = j['component_name']
+    component_group = None
+    component_description = None
+    
+    if 'group_name' in j:
+        component_group = j['group_name']
+
+    if 'component_description' in j:
+        component_description = j['component_description']
+
+    c = CachetClient()
+    ret = {}
+
+    try:
+        comp = c.find_or_create_component(component_name=component_name, component_description=component_description, component_group_name=component_group)
+        ret['status'] = 'success'
+        ret['component'] = comp
+    except Exception, e:
+        ret['status'] = 'error'
+        ret['error'] = '%s' % str(e)
+
+    return json.dumps(ret)
+
 
 @app.route("/alarms/receive/newrelic",methods=['POST'])
 def newrelic_alarm():
