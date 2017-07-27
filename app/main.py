@@ -67,7 +67,7 @@ def newrelic_alarm():
     a_url = j['incident_url']
     
     i_name = alarm_name
-    i_msg = "%s : %s (%s) [NEWRELIC]" % (alarm_name, new_state_reason, a_url)
+    i_msg = "%s : %s - [NEWRELIC Incident](%s) " % (alarm_name, new_state_reason, a_url)
 
     component_name = app_name
     component_group = None
@@ -124,7 +124,7 @@ def aws_alarm():
     component_group = r[aws_client.tag_monitor_group_key]
 
     i_name = alarm_name
-    i_msg = "%s %s : %s - %s (%s) [AWS-CloudWatch]" % (new_state, alarm_name, new_state_reason, state_change_time,alarm_description)
+    i_msg = "%s %s : %s - %s (%s) [AWS-CloudWatch](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#alarm:alarmFilter=inAlarm)" % (new_state, alarm_name, new_state_reason, state_change_time,alarm_description)
 
     c = CachetClient()
     if new_state == 'ALARM':

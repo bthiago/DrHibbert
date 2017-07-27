@@ -3,9 +3,22 @@
 
 # Installation
 (TODO)
+* Clone Baltha CacheHQ-Docker
+* Build Image Baltha CacheHQ-Docker
+* Clone DrHibbert
+* Build Image DrHibbert
+* Setup MySQL
+* Create .env file
+* Setup AWS CloudWatch Alarms
+* Setup New Relic Alerts
+* Setup CacheHQ API Key
+* Setup Google Authentication
 
 # Tutorial
 (TODO)
+* Setup AWS CloudWatch Topic
+* Setup New Relic Alert Channel
+* Setup DrHibbert
 
 # Configuration 
 
