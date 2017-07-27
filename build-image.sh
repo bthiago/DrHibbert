@@ -1,2 +1,2 @@
-version=v0.1
+version=v0.2
 docker build -t drhibbert:$version .
